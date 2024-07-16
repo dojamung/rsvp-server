@@ -1,0 +1,5 @@
+# Docker 이미지 빌드
+docker build -t rsvp-app .
+
+# Docker 컨테이너 실행 (예시 포트: 3000을 호스트의 3000 포트로 매핑)
+docker run -p 3000:3000 rsvp-app
