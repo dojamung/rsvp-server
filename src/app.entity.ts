@@ -11,6 +11,12 @@ export class RsvpModel {
   @Column({ type: 'varchar', length: 255 })
   name: string;
 
+  @Column({ type: 'varchar', length: 10, nullable: true })
+  side: string;
+ 
+  @Column({ type: 'int', nullable: true })
+  count: number;
+ 
   @CreateDateColumn({
     type: 'timestamptz'
   })

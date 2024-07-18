@@ -5,10 +5,10 @@ import { AppService, Rsvp } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  // @Get()
-  // getHello(): string {
-  //   return this.appService.getHello();
-  // }
+  @Get()
+  getHello(): string {
+    return this.appService.getHello();
+  }
 
   // @Post('regist')
   // regist(@Body('name') name: string): Promise<string> {
@@ -20,27 +20,24 @@ export class AppController {
     return this.appService.getGuestsCount();
   }
 
-  @Get()
+  @Get('all')
   getAllGuests() {
     return this.appService.getAllGuests();
   }
 
-  @Get(':id')
+  @Get('get/:id')
   getGuest(@Param('id') id: number) {
     return this.appService.getGuestById(id);
   }
 
   @Post('regist')
-  registGuest(@Body('name') name: string) {
-    return this.appService.registGuest(name);
+  registGuest(@Body('name') name: string, @Body('side') side: string, @Body('count') count: number) {
+    return this.appService.registGuest(name, side, count);
   }
 
-  // @Post('registR')
-  // async registR(@Body() body: { name: string }): Promise<void> {
-  //   const id = new Date().getTime(); // 임시로 현재 시간을 사용한 ID 생성
-  //   const requestDateTime = new Date();
-  //   const { name } = body;
+  @Get(':side/sum')
+  getTotalCountSum(@Param('side') side: string ) {
+    return this.appService.getTotalCountSum(side);
+  }
 
-  //   await this.appService.addDataToJSON(id, requestDateTime, name);
-  // }
 }

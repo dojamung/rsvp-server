@@ -8,8 +8,8 @@ import { RsvpModel } from './app.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'host.docker.internal', // Docker 컨테이너가 실행 중인 호스트 IP
-      port: 5435, // PostgreSQL 포트
+      host: 'postgres', 
+      port: 5432, 
       username: 'postgres',
       password: 'kimdoh1!',
       database: 'postgres',
