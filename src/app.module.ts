@@ -8,8 +8,8 @@ import { RsvpModel } from './app.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'postgres', 
-      port: 5432, 
+      host: '152.69.227.39', 
+      port: 5435, 
       username: 'postgres',
       password: 'kimdoh1!',
       database: 'postgres',
